@@ -17,10 +17,10 @@ jobs:
     name: Build
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Cache west modules
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             modules/
@@ -45,7 +45,7 @@ jobs:
         run: west build -s zmk/app -b seeeduino_xiao_ble -- -DSHIELD=right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
         
       - name: Rename and Upload Firmware
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: build/zephyr/zmk.uf2
