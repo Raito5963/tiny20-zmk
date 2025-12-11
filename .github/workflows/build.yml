@@ -34,17 +34,17 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (tiny20_left)
-        run: west build -s zmk/app -b seeeduino_xiao_ble -- -DSHIELD=tiny20_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b xiao_ble -- -DSHIELD=tiny20_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Rename tiny20_left artifact
-        run: cp build/zephyr/zmk.uf2 seeeduino_xiao_ble-tiny20_left.uf2
+        run: cp build/zephyr/zmk.uf2 xiao_ble-tiny20_left.uf2
       - name: West Build (tiny20_right)
-        run: west build --pristine -s zmk/app -b seeeduino_xiao_ble -- -DSHIELD=tiny20_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b xiao_ble -- -DSHIELD=tiny20_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Rename tiny20_right artifact
-        run: cp build/zephyr/zmk.uf2 seeeduino_xiao_ble-tiny20_right.uf2
+        run: cp build/zephyr/zmk.uf2 xiao_ble-tiny20_right.uf2
       - name: Archive artifacts
         uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: |
-            seeeduino_xiao_ble-tiny20_left.uf2
-            seeeduino_xiao_ble-tiny20_right.uf2
+            xiao_ble-tiny20_left.uf2
+            xiao_ble-tiny20_right.uf2
