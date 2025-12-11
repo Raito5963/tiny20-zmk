@@ -10,10 +10,27 @@
 	col-offset = <10>;
 };
 
-&physical_layout {
-	position-map = <
-		10 11 12 13
-		14 15 16 17
-		   18 19
-	>;
+/ {
+	chosen {
+		zmk,physical-layout = &physical_layout_right;
+	};
+
+	physical_layout_right: physical_layout_right {
+		compatible = "zmk,physical-layout";
+		display-name = "Right Half";
+		transform = <&default_transform>;
+		kscan = <&kscan0>;
+		keys
+			= <&key_physical_attrs 100 100 600   0>
+			, <&key_physical_attrs 100 100 700   0>
+			, <&key_physical_attrs 100 100 800   0>
+			, <&key_physical_attrs 100 100 900   0>
+			, <&key_physical_attrs 100 100 600 100>
+			, <&key_physical_attrs 100 100 700 100>
+			, <&key_physical_attrs 100 100 800 100>
+			, <&key_physical_attrs 100 100 900 100>
+			, <&key_physical_attrs 175 100 600 200>
+			, <&key_physical_attrs 125 100 775 200>
+			;
+	};
 };
