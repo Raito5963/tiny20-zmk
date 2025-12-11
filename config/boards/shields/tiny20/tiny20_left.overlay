@@ -9,12 +9,24 @@
 / {
 	chosen {
 		zmk,physical-layout = &physical_layout_left;
+		zmk,matrix_transform = &left_transform;
+	};
+
+	left_transform: matrix_transform_left {
+		compatible = "zmk,matrix-transform";
+		columns = <10>;
+		rows = <1>;
+		map = <
+			RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)
+			RC(0,4)  RC(0,5)  RC(0,6)  RC(0,7)
+			                 RC(0,8)  RC(0,9)
+		>;
 	};
 
 	physical_layout_left: physical_layout_left {
 		compatible = "zmk,physical-layout";
 		display-name = "Left Half";
-		transform = <&default_transform>;
+		transform = <&left_transform>;
 		keys
 			= <&key_physical_attrs 100 100   0   0>
 			, <&key_physical_attrs 100 100 100   0>
