@@ -9,3 +9,11 @@
 &default_transform {
 	col-offset = <10>;
 };
+
+&physical_layout {
+	position-map = <
+		10 11 12 13
+		14 15 16 17
+		   18 19
+	>;
+};
