@@ -1,6 +1,8 @@
 // Copyright (c) 2025
 // SPDX-License-Identifier: MIT
 
+#include <dt-bindings/zmk/matrix_transform.h>
+
 / {
     chosen {
         zmk,kscan = &kscan0;
