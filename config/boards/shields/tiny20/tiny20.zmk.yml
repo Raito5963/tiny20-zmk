@@ -7,5 +7,5 @@ requires: [xiao_ble]
 features:
   - keys
 siblings:
-  - tiny_left
-  - tiny_right
+  - tiny20_left
+  - tiny20_right

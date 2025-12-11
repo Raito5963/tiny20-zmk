@@ -18,8 +18,6 @@
 	physical_layout_right: physical_layout_right {
 		compatible = "zmk,physical-layout";
 		display-name = "Right Half";
-		transform = <&default_transform>;
-		kscan = <&kscan0>;
 		keys
 			= <&key_physical_attrs 100 100 600   0>
 			, <&key_physical_attrs 100 100 700   0>
