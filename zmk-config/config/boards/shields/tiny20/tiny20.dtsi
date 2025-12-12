@@ -10,13 +10,13 @@
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <1>;
-        // | SW10 | SW2  | SW4  | SW6  |   | SW6  | SW4  | SW2  | SW10 |
-        // | SW9  | SW1  | SW3  | SW5  |   | SW5  | SW3  | SW1  | SW9  |
-        //               | SW8  | SW7  |   | SW7  | SW8  |
+        // | SW2  | SW4  | SW6  | SW8  |   | SW8  | SW6  | SW4  | SW2  |
+        // | SW1  | SW3  | SW5  | SW7  |   | SW7  | SW5  | SW3  | SW1  |
+        //               | SW9  | SW10 |   | SW10 | SW9  |
         map = <
-            RC(0,9) RC(0,1) RC(0,3) RC(0,5) RC(0,5) RC(0,3) RC(0,1) RC(0,9)
-            RC(0,8) RC(0,0) RC(0,2) RC(0,4) RC(0,4) RC(0,2) RC(0,0) RC(0,8)
-                            RC(0,7) RC(0,6) RC(0,6) RC(0,7)
+            RC(0,1) RC(0,3) RC(0,5) RC(0,7)    RC(0,7) RC(0,5) RC(0,3) RC(0,1)
+            RC(0,0) RC(0,2) RC(0,4) RC(0,6)    RC(0,6) RC(0,4) RC(0,2) RC(0,0)
+                            RC(0,8) RC(0,9)    RC(0,9) RC(0,8)
         >;
     };
 
@@ -24,16 +24,16 @@
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
         input-gpios
-            = <&xiao_ble 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            = <&xiao_ble 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_ble 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_ble 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_ble 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_ble 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_ble 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_ble 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_ble 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_ble 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&xiao_ble 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_ble 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&xiao_ble 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_ble 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             ;
     };
 }
