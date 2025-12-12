@@ -1,0 +1,13 @@
+file_format: "1"
+id: tiny20
+name: Tiny20
+type: shield
+url: https://github.com/Raito5963/tiny20-zmk/
+requires:
+  - xiao_ble
+features:
+  - keys
+  - studio
+siblings:
+  - tiny20_left
+  - tiny20_right

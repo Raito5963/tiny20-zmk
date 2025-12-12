@@ -1,0 +1,16 @@
+if SHIELD_TINY20_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Tiny20"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_TINY20_LEFT || SHIELD_TINY20_RIGHT
+
+config ZMK_SPLIT
+    default y 
+    
+endif
